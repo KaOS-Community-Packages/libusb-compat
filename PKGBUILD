@@ -1,12 +1,13 @@
 pkgname=libusb-compat
-pkgver=0.1.5
+pkgver=0.1.7
 pkgrel=1
 pkgdesc="Library to enable user space application programs to communicate with USB devices"
 arch=('x86_64')
 url="http://libusb.sourceforge.net/"
 license=('LGPL')
 depends=('libusb' 'sh')
-source=("http://downloads.sourceforge.net/${pkgname%-*}/${pkgname}-${pkgver%.*}/$pkgname-$pkgver/${pkgname}-${pkgver}.tar.bz2")
+source=("https://github.com/libusb/libusb-compat-0.1/releases/download/v$pkgver/$pkgname-$pkgver.tar.gz")
+sha256sums=('0679ce38aa02498c1eea9c13398a0d2356883d574632a59c1e25274ed4925cf8')
 
 build() {
   cd "${srcdir}/${pkgname}-${pkgver}"
@@ -19,4 +20,4 @@ package() {
   make DESTDIR="${pkgdir}" install
 }
 
-md5sums=('2780b6a758a1e2c2943bdbf7faf740e4')
+a
